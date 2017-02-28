@@ -81,8 +81,8 @@ gulp.task("build", () => {
 
 // Watchers
 gulp.task("watch", ["browserSync", "transpile"], () => {
-    gulp.watch("src/js/app.js", ["transpile"]);
-    gulp.watch("src/**/!(*app.js)", browserSync.reload);
+    gulp.watch("src/js/**/!(*bundle.js)", ["transpile"]);
+    gulp.watch("src/**/!(*.js)", browserSync.reload);
 });
 
 // Default
